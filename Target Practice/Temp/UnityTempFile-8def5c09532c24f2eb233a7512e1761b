@@ -290,4 +290,6 @@
 /define:ENABLE_LEGACY_INPUT_MANAGER
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
-"Assets/Movement.cs"
+"Assets/scr.cs"
+"Assets/Scripts/CameraFollow.cs"
+"Assets/Scripts/Movement.cs"
