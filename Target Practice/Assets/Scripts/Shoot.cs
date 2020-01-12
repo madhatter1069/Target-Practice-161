@@ -6,13 +6,12 @@ public class Shoot : MonoBehaviour
 {
     //public GameObject projectile;
     public Rigidbody projectile;
-    public int bulletSpeed = 500;
+    public int bulletSpeed = 10;
     private float timer = 0f;
     public int shootTime = 2;
     // Start is called before the first frame update
     void Start()
     {
-        timer=shootTime;
     }
 
     // Update is called once per frame
@@ -25,9 +24,9 @@ public class Shoot : MonoBehaviour
                 Rigidbody clone;
             
                 clone = Instantiate(projectile, transform.position+ Vector3.up, transform.rotation);
-                timer= timer-shootTime;
-                clone.transform.parent= gameObject.transform;
-                clone.AddForce(transform.forward * bulletSpeed);
+                timer = 0;
+                clone.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed);
+                //clone.AddForce(transform.forward * bulletSpeed);
             }
 
             
