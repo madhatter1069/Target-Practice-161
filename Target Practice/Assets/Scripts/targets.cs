@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class targets : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,11 +15,9 @@ public class Bullet : MonoBehaviour
     {
         
     }
+
     void OnCollisionEnter(Collision collision){
-        if(collision.gameObject.tag == "Arena"){
-            Destroy(gameObject);
-        }
-        if(collision.gameObject.tag == "target"){
+        if(collision.gameObject.tag == "Bullet"){
             Destroy(gameObject);
         }
     }

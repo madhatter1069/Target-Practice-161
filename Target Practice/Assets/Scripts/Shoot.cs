@@ -26,7 +26,6 @@ public class Shoot : MonoBehaviour
                 clone = Instantiate(projectile, transform.position+ Vector3.up, transform.rotation);
                 timer = 0;
                 clone.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed);
-                //clone.AddForce(transform.forward * bulletSpeed);
             }
 
             
