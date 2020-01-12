@@ -12,6 +12,7 @@ public class Shoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timer=shootTime;
     }
 
     // Update is called once per frame
@@ -23,9 +24,11 @@ public class Shoot : MonoBehaviour
             if (timer>shootTime){
                 Rigidbody clone;
             
-                clone = Instantiate(projectile, transform.position+ Vector3.up, transform.rotation);
+                clone = Instantiate(projectile, 
+                                    transform.position + Vector3.up + (3*transform.forward), 
+                                    transform.rotation);
                 timer = 0;
-                clone.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed);
+                //clone.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed);
             }
 
             

@@ -21,7 +21,7 @@ public class CameraFollow : MonoBehaviour
         transform.position=playerObject.position-playerObject.forward * distfromObj;
         transform.LookAt(playerObject.position);
         transform.position= new Vector3 (transform.position.x,
-                                        transform.position.y+ camHeight,
+                                        transform.position.y + camHeight,
                                         transform.position.z);
 
         
