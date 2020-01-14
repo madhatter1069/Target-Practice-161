@@ -28,7 +28,7 @@ public class Shoot : MonoBehaviour
                                     transform.position + Vector3.up + (3*transform.forward), 
                                     transform.rotation);
                 timer = 0;
-                //clone.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed);
+                clone.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed);
             }
 
             
