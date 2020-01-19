@@ -8,7 +8,7 @@ public class Shoot : MonoBehaviour
     public Rigidbody projectile;
     public int bulletSpeed = 10;
     private float timer = 0f;
-    public int shootTime = 2;
+    [SerializeField] private float shootTime = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,7 @@ public class Shoot : MonoBehaviour
                 Rigidbody clone;
             
                 clone = Instantiate(projectile, 
-                                    transform.position + (3*transform.forward),
+                                    transform.position + (4*transform.forward) + transform.up,
                                     transform.rotation);
                 timer = 0;
                 clone.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed);
