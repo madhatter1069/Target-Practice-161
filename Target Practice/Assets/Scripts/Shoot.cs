@@ -31,24 +31,6 @@ public class Shoot : MonoBehaviour
                 clone.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed);
             }
 
-            
-
-            //clone.transform.Translate(Vector3.forward * bulletSpeed);
-            //clone.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed);
-            /*
-            Rigidbody body= GetComponent<Rigidbody>();
-            GameObject bullet= Instantiate(projectile) as GameObject;
-            bullet.transform.position=transform.position+Vector3.forward;
-
-            
-            
-            /*GameObject bullet = Instantiate(projectile, 
-                                            new Vector3(body.position.x,
-                                            body.position.y+3,
-                                            body.position.z) , 
-                                            Quaternion.identity); 
-            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
-            */
         }
         
     }
