@@ -25,7 +25,7 @@ public class Shoot : MonoBehaviour
                 Rigidbody clone;
             
                 clone = Instantiate(projectile, 
-                                    transform.position + (4*transform.forward) + transform.up,
+                                    transform.position + (5*transform.forward) + transform.up,
                                     transform.rotation);
                 timer = 0;
                 clone.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed);
