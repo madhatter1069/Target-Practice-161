@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    //public GameObject projectile;
-    public Rigidbody projectile;
+    public GameObject projectile;
     public int bulletSpeed = 10;
     private float timer = 0f;
     [SerializeField] private float shootTime = 1.0f;
@@ -23,13 +22,14 @@ public class Shoot : MonoBehaviour
         if (Input.GetKeyUp(shoot))
         {
             if (timer>shootTime){
-                Rigidbody clone;
-            
+                GameObject clone;
                 clone = Instantiate(projectile, 
                                     transform.position + (5*transform.forward) + transform.up,
                                     transform.rotation);
+                clone.gameObject.tag = gameObject.tag;
                 timer = 0;
-                clone.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed);
+                Rigidbody body = clone.GetComponent<Rigidbody>(); 
+                body.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed);
             }
 
         }

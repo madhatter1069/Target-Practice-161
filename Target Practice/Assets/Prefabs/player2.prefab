@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a3e2e8e39774050a8f0c92642af7b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 2652413923218332756, guid: 81186b3295b0043399e76801c4f5cd73,
+  projectile: {fileID: 8368857414297360326, guid: 81186b3295b0043399e76801c4f5cd73,
     type: 3}
   bulletSpeed: 20
   shootTime: 1
