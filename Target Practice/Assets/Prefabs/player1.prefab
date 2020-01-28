@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 7099031020516386725}
   - component: {fileID: 4866581406067359797}
   m_Layer: 0
-  m_Name: tank (1)
-  m_TagString: Untagged
+  m_Name: player1
+  m_TagString: player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,6 +95,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  forward: w
+  left: a
+  back: s
+  right: d
 --- !u!114 &1090229373727639492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +115,7 @@ MonoBehaviour:
     type: 3}
   bulletSpeed: 20
   shootTime: 1
+  shoot: space
 --- !u!54 &7099031020516386725
 Rigidbody:
   m_ObjectHideFlags: 0

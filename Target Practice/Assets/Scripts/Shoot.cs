@@ -9,6 +9,7 @@ public class Shoot : MonoBehaviour
     public int bulletSpeed = 10;
     private float timer = 0f;
     [SerializeField] private float shootTime = 1.0f;
+    [SerializeField] private string shoot="Return";
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class Shoot : MonoBehaviour
     void Update()
     {
         timer+=Time.deltaTime;
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(shoot))
         {
             if (timer>shootTime){
                 Rigidbody clone;
