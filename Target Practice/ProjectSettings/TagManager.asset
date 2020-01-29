@@ -9,6 +9,8 @@ TagManager:
   - target
   - player1
   - player2
+  - bullet1
+  - bullet2
   layers:
   - Default
   - TransparentFX

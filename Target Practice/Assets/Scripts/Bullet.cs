@@ -22,5 +22,11 @@ public class Bullet : MonoBehaviour
         if(collision.gameObject.tag == "target"){
             Destroy(gameObject);
         }
+        if(collision.gameObject.tag == "player1"){
+            Destroy(gameObject);
+        }
+        if(collision.gameObject.tag == "player2"){
+            Destroy(gameObject);
+        }
     }
 }

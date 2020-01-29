@@ -17,8 +17,9 @@ public class targets : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision){
-        if(collision.gameObject.tag == "Bullet"){
+        if(collision.gameObject.tag == "bullet1" || collision.gameObject.tag == "bullet2"){
             Destroy(gameObject);
         }
     }
+   
 }

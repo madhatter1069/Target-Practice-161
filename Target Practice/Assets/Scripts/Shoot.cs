@@ -26,7 +26,10 @@ public class Shoot : MonoBehaviour
                 clone = Instantiate(projectile, 
                                     transform.position + (5*transform.forward) + transform.up,
                                     transform.rotation);
-                clone.gameObject.tag = gameObject.tag;
+                if (gameObject.tag == "player1")
+                    clone.gameObject.tag = "bullet1";
+                else
+                    clone.gameObject.tag = "bullet2";
                 timer = 0;
                 Rigidbody body = clone.GetComponent<Rigidbody>(); 
                 body.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed);

@@ -9,11 +9,13 @@ public class Movement : MonoBehaviour
     [SerializeField] private string left="a";
     [SerializeField] private string back="s";
     [SerializeField] private string right="d";
+    public GameManager gameManager;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        //gameManager.UpdateSpawnPosition(gameObject.transform,1);
+        //gameManager.UpdateSpawnPosition(gameObject.transform,2);
     }
 
     // Update is called once per frame
@@ -46,4 +48,15 @@ public class Movement : MonoBehaviour
         }
 
     }
+    void OnCollisionEnter(Collision collision){
+        if(gameObject.tag == "player2" && collision.gameObject.tag == "bullet1"){
+            gameManager.playerDeath(2);
+            gameManager.GameOver(gameObject);
+        }
+        if(gameObject.tag == "player1" && collision.gameObject.tag == "bullet2"){
+            gameManager.playerDeath(1);
+            gameManager.GameOver(gameObject);
+        }
+    }
+    
 }
