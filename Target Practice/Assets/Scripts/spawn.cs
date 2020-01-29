@@ -15,16 +15,5 @@ public class spawn : MonoBehaviour
         }
             
     }
-    /*void OnCollisionEnter(Collision collision){
-        if (collision.gameObject.tag == "player1"){
-            Debug.Log("Hello1");
-            gameManager.UpdateSpawnPosition(gameObject.transform,1);
-        }
-        if (collision.gameObject.tag == "player2"){
-            Debug.Log("Hello2");
-            gameManager.UpdateSpawnPosition(gameObject.transform,2);
-        }
-            
-    }*/
 
 }

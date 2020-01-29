@@ -14,38 +14,39 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //gameManager.UpdateSpawnPosition(gameObject.transform,1);
-        //gameManager.UpdateSpawnPosition(gameObject.transform,2);
+        
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Rigidbody body= GetComponent<Rigidbody>();
         
         if (Input.GetKey(left))
         {   
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            body.velocity = new Vector3(speed*-1,0,0);
             transform.rotation = Quaternion.LookRotation(Vector3.left);
         }
 
         else if (Input.GetKey(forward))  
         { 
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            body.velocity = new Vector3(0,0,speed);
             transform.rotation = Quaternion.LookRotation(Vector3.forward);
         }
 
         else if (Input.GetKey(back)) 
         {  
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            body.velocity = new Vector3(0,0,speed*-1);
             transform.rotation = Quaternion.LookRotation(Vector3.back);
         }
 
         else if (Input.GetKey(right)) 
         {  
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            body.velocity = new Vector3(speed,0,0);
             transform.rotation = Quaternion.LookRotation(Vector3.right);
         }
+        else
+            body.velocity = new Vector3(0,body.velocity.y,0);
 
     }
     void OnCollisionEnter(Collision collision){
