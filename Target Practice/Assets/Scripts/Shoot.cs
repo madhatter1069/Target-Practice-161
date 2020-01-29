@@ -26,10 +26,13 @@ public class Shoot : MonoBehaviour
                 clone = Instantiate(projectile, 
                                     transform.position + (5*transform.forward) + transform.up,
                                     transform.rotation);
-                if (gameObject.tag == "player1")
+                if (gameObject.tag == "player1"){
                     clone.gameObject.tag = "bullet1";
+                    clone.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.blue);
+                }
                 else
                     clone.gameObject.tag = "bullet2";
+                    
                 timer = 0;
                 Rigidbody body = clone.GetComponent<Rigidbody>(); 
                 body.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed);
