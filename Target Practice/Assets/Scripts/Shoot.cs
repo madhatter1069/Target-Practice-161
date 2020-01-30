@@ -27,7 +27,7 @@ public class Shoot : MonoBehaviour
                                     transform.position + (5*transform.forward) + transform.up,
                                     transform.rotation);
                 clone.GetComponent<MeshRenderer>().material.color = gameObject.GetComponent<MeshRenderer>().material.color;
-                clone.gameObject.tag = gameObject.tag;
+                clone.gameObject.tag = "bullet" + gameObject.GetComponent<Movement>().PlayerIDNum().ToString();
                     
                 timer = 0;
                 Rigidbody body = clone.GetComponent<Rigidbody>(); 

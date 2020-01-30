@@ -798,8 +798,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 934490372}
-  - component: {fileID: 934490369}
   - component: {fileID: 934490373}
+  - component: {fileID: 934490369}
   m_Layer: 0
   m_Name: Player2 spawn
   m_TagString: Respawn
@@ -807,8 +807,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &934490369
-CapsuleCollider:
+--- !u!65 &934490369
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -817,10 +817,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &934490372
 Transform:
   m_ObjectHideFlags: 0
@@ -847,7 +846,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8b18daca3b742ae908b77efd849800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
 --- !u!4 &972242740 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 9a5f9fcea6c41404c9fa19657f796014,
@@ -1224,6 +1222,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: player2
       objectReference: {fileID: 0}
+    - target: {fileID: 257898179690199560, guid: 536e75d9896cc4f2e97b05b7e735a9ca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3877428716404574235, guid: 536e75d9896cc4f2e97b05b7e735a9ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1283,6 +1286,11 @@ PrefabInstance:
         type: 3}
       propertyPath: gameManager
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952381841024392651, guid: 536e75d9896cc4f2e97b05b7e735a9ca,
+        type: 3}
+      propertyPath: playerID
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 536e75d9896cc4f2e97b05b7e735a9ca, type: 3}
@@ -2034,7 +2042,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8b18daca3b742ae908b77efd849800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
 --- !u!4 &1890176756 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 6cfe660b1f67b45d8b9ed73b10406443,
@@ -2226,6 +2233,11 @@ PrefabInstance:
         type: 3}
       propertyPath: gameManager
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202152614099277418, guid: 909cd9ae1e1f84ed28b79ea448ac4b1d,
+        type: 3}
+      propertyPath: playerID
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5414464049611457466, guid: 909cd9ae1e1f84ed28b79ea448ac4b1d,
         type: 3}

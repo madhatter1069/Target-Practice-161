@@ -9,12 +9,20 @@ public class Movement : MonoBehaviour
     [SerializeField] private string left="a";
     [SerializeField] private string back="s";
     [SerializeField] private string right="d";
+    [SerializeField] private int playerID = 0;
     private Transform SpawnPosition;
     
-
+    void Start()
+    {
+        
+    }
+    public int PlayerIDNum(){
+        return playerID;
+    }
     public void UpdateSpawnPosition(Transform newPosition)
     {
-        SpawnPosition=newPosition;
+        SpawnPosition = newPosition;
+        SpawnPosition.rotation = transform.rotation;
     }
 
     // Update is called once per frame
@@ -50,10 +58,9 @@ public class Movement : MonoBehaviour
 
     }
     void OnCollisionEnter(Collision collision){
-        if(gameObject.tag == "player2" && collision.gameObject.tag == "bullet1"){
-            GameOver();
-        }
-        if(gameObject.tag == "player1" && collision.gameObject.tag == "bullet2"){
+        if(collision.gameObject.tag.Length>5 
+            && collision.gameObject.tag.Substring(0,6) == "bullet" 
+            && collision.gameObject.tag[6] != playerID){
             GameOver();
         }
     }
@@ -65,8 +72,8 @@ public class Movement : MonoBehaviour
     IEnumerator RestartGame()
     {
         yield return new WaitForSeconds(1f);
-        gameObject.transform.position = SpawnPosition.position;
-        gameObject.transform.rotation = Quaternion.LookRotation(Vector3.forward);
+        transform.position = SpawnPosition.position;
+        transform.rotation = SpawnPosition.rotation;
     }
     
 }

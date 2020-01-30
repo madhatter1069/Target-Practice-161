@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class spawn : MonoBehaviour
 {
-    public Movement movement;
+    
 
     void OnTriggerEnter(Collider collider){
+        Movement movement = collider.GetComponent<Movement>();
         movement.UpdateSpawnPosition(gameObject.transform);
+        //Destroy(gameObject);
             
     }
 
