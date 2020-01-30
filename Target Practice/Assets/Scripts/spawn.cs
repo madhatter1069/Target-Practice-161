@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class spawn : MonoBehaviour
 {
-    public GameManager gameManager;
+    public Movement movement;
 
     void OnTriggerEnter(Collider collider){
-        if (collider.tag == "player1"){
-            gameManager.UpdateSpawnPosition(gameObject.transform,1);
-        }
-        if (collider.tag == "player2"){
-            gameManager.UpdateSpawnPosition(gameObject.transform,2);
-        }
+        movement.UpdateSpawnPosition(gameObject.transform);
             
     }
 

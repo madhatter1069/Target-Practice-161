@@ -99,6 +99,7 @@ MonoBehaviour:
   left: left
   back: down
   right: right
+  gameManager: {fileID: 0}
 --- !u!114 &8199413714139270245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +116,7 @@ MonoBehaviour:
     type: 3}
   bulletSpeed: 20
   shootTime: 1
-  shoot: return
+  shoot: .
 --- !u!54 &2049064831685553156
 Rigidbody:
   m_ObjectHideFlags: 0

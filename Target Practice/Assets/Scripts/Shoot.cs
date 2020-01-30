@@ -8,13 +8,13 @@ public class Shoot : MonoBehaviour
     public int bulletSpeed = 10;
     private float timer = 0f;
     [SerializeField] private float shootTime = 1.0f;
-    [SerializeField] private string shoot="Return";
+    [SerializeField] private string shoot="space";
     // Start is called before the first frame update
     void Start()
     {
         timer=shootTime;
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -26,12 +26,8 @@ public class Shoot : MonoBehaviour
                 clone = Instantiate(projectile, 
                                     transform.position + (5*transform.forward) + transform.up,
                                     transform.rotation);
-                if (gameObject.tag == "player1"){
-                    clone.gameObject.tag = "bullet1";
-                    clone.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.blue);
-                }
-                else
-                    clone.gameObject.tag = "bullet2";
+                clone.GetComponent<MeshRenderer>().material.color = gameObject.GetComponent<MeshRenderer>().material.color;
+                clone.gameObject.tag = gameObject.tag;
                     
                 timer = 0;
                 Rigidbody body = clone.GetComponent<Rigidbody>(); 
