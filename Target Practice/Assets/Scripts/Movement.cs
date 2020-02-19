@@ -61,6 +61,7 @@ public class Movement : MonoBehaviour
         if(collision.gameObject.tag.Length>5 
             && collision.gameObject.tag.Substring(0,6) == "bullet" 
             && collision.gameObject.tag[6] != playerID){
+            
             GameOver();
         }
     }
@@ -71,7 +72,8 @@ public class Movement : MonoBehaviour
 
     IEnumerator RestartGame()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
+        gameObject.SetActive(true);
         transform.position = SpawnPosition.position;
         transform.rotation = SpawnPosition.rotation;
     }
